@@ -128,4 +128,4 @@ for response in stream(input_text):
 
 I hope you found this tutorial useful. Feel free to explore the code and adapt it to your needs.
 
-Credits to [Dante Noguez](https://github.com/DanteNoguez) & [Mayo Oshin](https://github.com/mayooear)
+Credits to [Dante Noguez](https://github.com/DanteNoguez) & [Mayo Oshin](https://github.com/mayooear) for inspiration
