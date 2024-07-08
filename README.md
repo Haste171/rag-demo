@@ -127,3 +127,5 @@ for response in stream(input_text):
 `We parse a PDF file, ingest its content into the vector store, and then query the LLM to answer a question about Bitcoin, streaming and printing the response.`
 
 I hope you found this tutorial useful. Feel free to explore the code and adapt it to your needs.
+
+Credits to [Dante Noguez](https://github.com/DanteNoguez) & [Mayo Oshin](https://github.com/mayooear)
