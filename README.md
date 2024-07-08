@@ -3,7 +3,7 @@ RAG stands for Retrieval-Augmented Generation. This technique combines informati
 Here's a simple diagram to illustrate how the RAG process is used in a simple use-case, document context-aware question answering with an LLM:
 
 
-![This is an image](https://truthre.org/media/tutorials/Haste_33146308f8.png)  
+![This is an image]([https://truthre.org/media/tutorials/Haste_33146308f8.png](https://raw.githubusercontent.com/Haste171/rag-demo/main/diagram.png))  
 
 ## Converting this Diagram Into Code
 
@@ -127,5 +127,3 @@ for response in stream(input_text):
 `We parse a PDF file, ingest its content into the vector store, and then query the LLM to answer a question about Bitcoin, streaming and printing the response.`
 
 I hope you found this tutorial useful. Feel free to explore the code and adapt it to your needs.
-
-All content available here: https://github.com/Haste171/rag-demo
