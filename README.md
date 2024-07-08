@@ -10,7 +10,7 @@ Here's a simple diagram to illustrate how the RAG process is used in a simple us
 **1. Imports and Setup**
 First, we import the necessary libraries and load environment variables.
 
-```
+```python
 import os
 from typing import List, Iterator
 from openai import OpenAI
@@ -31,7 +31,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 **2. Initialize Clients and Utilities**
 We initialize the OpenAI client and other utilities required for text splitting and embeddings.
 
-```
+```python
 client = OpenAI(api_key=OPENAI_API_KEY)  # Using OpenAI client directly
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)  # Langchain wrapper for OpenAI embeddings
@@ -43,7 +43,7 @@ docsearch = Chroma(embedding_function=embeddings, persist_directory=persist_dire
 **3. Parse PDF Function**
 This function loads a PDF file, splits it into chunks, and returns the chunks as documents.
 
-```
+```python
 def parse_pdf(pdf_path: str) -> List[Document]:
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"File not found at {pdf_path}")
@@ -59,7 +59,7 @@ def parse_pdf(pdf_path: str) -> List[Document]:
 **4. Ingest Data Function**
 This function ingests data into a vector store, making it searchable.
 
-```
+```python
 def ingest_data(data: List[Document], persist_directory: str = "database/") -> None:
     vectorstore = Chroma.from_documents(
         documents=data, 
@@ -73,7 +73,7 @@ def ingest_data(data: List[Document], persist_directory: str = "database/") -> N
 **5. Generate Prompt Function**
 This function generates a prompt for the LLM by retrieving similar documents based on a query.
 
-```
+```python
 def gen_prompt(query: str, k: int = 4) -> str:
     docs = docsearch.similarity_search(query, k)
     
@@ -92,7 +92,7 @@ def gen_prompt(query: str, k: int = 4) -> str:
 **6. Stream Function**
 This function streams the response from the LLM using the generated prompt.
 
-```
+```python
 def stream(input_text: str) -> Iterator[str]:
     final_prompt = gen_prompt(input_text)
     
@@ -116,7 +116,7 @@ def stream(input_text: str) -> Iterator[str]:
 **7. Main Execution**
 Finally, we parse the PDF, ingest the data, and query the LLM.
 
-```
+```python
 data = parse_pdf("example_data/bitcoin_whitepaper.pdf")
 ingest_data(data)
 
