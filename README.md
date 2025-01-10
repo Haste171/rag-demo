@@ -3,7 +3,7 @@ RAG stands for Retrieval-Augmented Generation. This technique combines informati
 Here's a simple diagram to illustrate how the RAG process is used in a simple use-case, document context-aware question answering with an LLM:
 
 
-![This is an image](https://camo.githubusercontent.com/42711cabcb0a9b803e4885a0fd3b8fba84d8f94113b9b780a64e3c7aec540311/68747470733a2f2f747275746872652e6f72672f6d656469612f7475746f7269616c732f48617374655f333331343633303866382e706e67)  
+![This is an image](https://github.com/Haste171/rag-demo/blob/main/diagram.png)  
 
 ## Converting this Diagram Into Code
 
